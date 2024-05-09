@@ -4,16 +4,7 @@ let humanScore = 0;
 let computerScore = 0;
 let tie = 0;
 
-let x = getComputerChoice();
-let y = getHumanChoice();
-
-console.log(`The Computer choice is ${x}`)
-console.log(`Your choice is ${y}`)
-
-
-checkWinner(y,x);
-
-
+playGame()
 
 function getComputerChoice() {
 
@@ -39,11 +30,13 @@ function getHumanChoice(){
     return choice.toLowerCase();
 }
 
-function checkWinner(human, computer) {
+function playRound(human, computer) {
     
     if (human == computer){
 
         console.log("Its a tie!")
+        tie += 1;
+        
 
     }
 
@@ -51,6 +44,7 @@ function checkWinner(human, computer) {
     {
         
         console.log("You Lose!")
+        computerScore += 1
 
     }
     
@@ -58,6 +52,7 @@ function checkWinner(human, computer) {
     {
         
         console.log("You Win!")
+        humanScore += 1
 
     }
     
@@ -65,6 +60,7 @@ function checkWinner(human, computer) {
     {
         
         console.log("You Win!")
+        humanScore += 1
 
     }
     
@@ -72,18 +68,21 @@ function checkWinner(human, computer) {
     {
         
         console.log("You Lose!")
+        computerScore += 1
 
     }
     else if (human == "scissors" && computer == "rock")
     {
         
         console.log("You Lose!")
+        computerScore += 1
 
     }
     else if (human == "scissors" && computer == "paper")
     {
         
         console.log("You Win!")
+        humanScore += 1
 
         }
 
@@ -91,3 +90,34 @@ function checkWinner(human, computer) {
 
 
 }
+
+function playGame() {
+
+    let i = 0;
+
+    while (i < 10)
+    
+    { 
+
+        let compChoice = getComputerChoice();
+        let humanChoice = getHumanChoice();
+
+        playRound(humanChoice, compChoice)
+
+        i += 1
+        
+        }
+
+    console.log("Game Done!")
+
+    console.log(`Human Wins: ${humanScore}`)
+    console.log(`Computer Wins: ${computerScore}`)
+    console.log(`Ties: ${tie}`)
+
+    
+}
+
+
+
+
+
