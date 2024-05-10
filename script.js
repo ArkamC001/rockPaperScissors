@@ -8,12 +8,12 @@ playGame()
 
 function getComputerChoice() {
 
-    let x = Math.floor(Math.random()*3 + 1);
+    let x = Math.floor(Math.random()*3 + 1); // Generates a random number from 1 - 3
     
     switch (x) {
 
         case 1:
-            return "rock";
+            return "rock";   // Based on number generated (1, 2 or 3), assign it to a string 
         case 2:
             return "paper";
         case 3:
