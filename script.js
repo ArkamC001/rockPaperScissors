@@ -1,10 +1,29 @@
 
+const rockButton = document.querySelector(".optRock")
+
+
+// Rock button handler
+rockButton.addEventListener("click", function () {
+    
+console.log("rock button clicked")
+
+
+})
+
+
+
+
+
+
+
+
+/*
 
 let humanScore = 0;
 let computerScore = 0;
 let tie = 0;
 
-playGame()
+//playGame()
 
 function getComputerChoice() {
 
@@ -19,7 +38,6 @@ function getComputerChoice() {
         case 3:
             return "scissors";
     }
-
 
 }
 
@@ -95,7 +113,7 @@ function playGame() {
 
     let i = 0;
 
-    while (i < 10)
+    while (i < 5)
     
     { 
 
@@ -117,7 +135,7 @@ function playGame() {
     
 }
 
-
+*/
 
 
 

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors!</title>
+    <script src = "script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 
 
 
@@ -11,8 +13,30 @@
 
 <body>
 
-    <script src = "script.js"></script>
-    
+    <div id = "headerDiv">
+        <h1>Let's Play Rock Paper Scissors!</h1>
+        <h2>Select one of the following:</h2>
+    </div>
+
+    <div id = "optionsContainer">
+
+        <button class = "optionBtn optRock">Rock</button>
+        <button class = "optionBtn optPaper">Paper</button>
+        <button class = "optionBtn optScissors">Scissors</button>
+
+    </div>
+     
+    <div id = "scoreInfoContainer">
+
+        <h3>Round:<span id="round-info">0</span></h3>
+        <h3>Your Score:<span id="your-score-info">0</span></h3>
+        <h3>Computer Score:<span id="computer-score-info">0</span></h3>
+
+    </div>
+
+    <div id = "bottomTextDiv"><h2 id = "compSelectionText">Computer Chose: <span id = "compSelection">ROCK</span></h2></div>
+
+
 </body>
 
 
