@@ -31,19 +31,19 @@ h1{
     border-width: 10px;
 }
 
-.optRock{
+#optRock{
 
     background-color: #b97878;
     border-color: rgb(85, 85, 85);
 }
 
-.optPaper{
+#optPaper{
 
     background-color: rgb(240, 242, 119);
     border-color: rgb(222, 135, 6);
 }
 
-.optScissors{
+#optScissors{
 
     background-color: grey;
     border-color: red;

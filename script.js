@@ -1,27 +1,38 @@
 
-const rockButton = document.querySelector(".optRock")
+const options = document.querySelector("#optionsContainer")
+const roundInfo = document.querySelector("#round-info")
+const yourScoreInfo = document.querySelector("#your-score-info")
+const compScoreInfo = document.querySelector("#computer-score-info")
 
 
-// Rock button handler
-rockButton.addEventListener("click", function () {
+// Options handler --> EVENT DELEGATION !!
+options.addEventListener("click", function (e) {
+
+    let compChoice = getComputerChoice()
     
-console.log("rock button clicked")
+    let target = e.target; //applies the target method on the event object to return the node
+
+    switch (target.id) { // Checks and the id to see which button was pressed
+        
+
+        case "optRock":
+            playRound("rock",compChoice)
+            break;
+        case "optPaper":
+            playRound("paper",compChoice)
+            break;
+        case "optScissors":
+            playRound("scissors",compChoice)
+            break;
+    }
 
 
 })
 
-
-
-
-
-
-
-
-/*
-
 let humanScore = 0;
 let computerScore = 0;
 let tie = 0;
+let round = 0;
 
 //playGame()
 
@@ -41,12 +52,6 @@ function getComputerChoice() {
 
 }
 
-function getHumanChoice(){
-
-   let choice =  prompt("What is your choice: ");
-
-    return choice.toLowerCase();
-}
 
 function playRound(human, computer) {
     
@@ -104,11 +109,15 @@ function playRound(human, computer) {
 
         }
 
+    round += 1;
 
+    roundInfo.textContent = round
+    
 
 
 }
 
+/*
 function playGame() {
 
     let i = 0;
