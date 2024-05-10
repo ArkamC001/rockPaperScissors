@@ -19,6 +19,8 @@ h1{
     display: flex;
     justify-content: center;
     gap: 20px;
+    background-color: rgb(103, 154, 202);
+    padding: 20px;
 }
 
 .optionBtn{
@@ -52,7 +54,7 @@ h1{
 #scoreInfoContainer{
 
     display: flex;
-    gap: 50px;
+    gap: 30px;
     justify-content: center;
     margin-top: 20px;
 }
@@ -72,4 +74,13 @@ span#compSelection{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#bottomTextDiv{
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }

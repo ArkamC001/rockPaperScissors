@@ -3,36 +3,22 @@ const options = document.querySelector("#optionsContainer")
 const roundInfo = document.querySelector("#round-info")
 const yourScoreInfo = document.querySelector("#your-score-info")
 const compScoreInfo = document.querySelector("#computer-score-info")
-
-
-// Options handler --> EVENT DELEGATION !!
-options.addEventListener("click", function (e) {
-
-    let compChoice = getComputerChoice()
-    
-    let target = e.target; //applies the target method on the event object to return the node
-
-    switch (target.id) { // Checks and the id to see which button was pressed
-        
-
-        case "optRock":
-            playRound("rock",compChoice)
-            break;
-        case "optPaper":
-            playRound("paper",compChoice)
-            break;
-        case "optScissors":
-            playRound("scissors",compChoice)
-            break;
-    }
-
-
-})
+const tiesInfo = document.querySelector("#ties-info")
+const computerSelection = document.querySelector("#compSelection")
+const bottomText = document.querySelector("#bottomTextDiv")
 
 let humanScore = 0;
 let computerScore = 0;
 let tie = 0;
 let round = 0;
+
+
+
+// Options handler --> EVENT DELEGATION !!
+options.addEventListener("click", buttonClick)
+
+
+
 
 //playGame()
 
@@ -112,39 +98,56 @@ function playRound(human, computer) {
     round += 1;
 
     roundInfo.textContent = round
-    
+    computerSelection.textContent = computer.toUpperCase()
+    yourScoreInfo.textContent = humanScore
+    compScoreInfo.textContent = computerScore
+    tiesInfo.textContent = tie
 
 
 }
 
-/*
-function playGame() {
 
-    let i = 0;
+function buttonClick(e){
 
-    while (i < 5)
+let compChoice = getComputerChoice()
     
-    { 
+    let target = e.target; //applies the target method on the event object to return the node
 
-        let compChoice = getComputerChoice();
-        let humanChoice = getHumanChoice();
-
-        playRound(humanChoice, compChoice)
-
-        i += 1
+    switch (target.id) { // Checks and the id to see which button was pressed
         
+
+        case "optRock":
+            playRound("rock",compChoice)
+            break;
+        case "optPaper":
+            playRound("paper",compChoice)
+            break;
+        case "optScissors":
+            playRound("scissors",compChoice)
+            break;
+    }
+
+    if (round == 10) {
+
+        let finishText = document.createElement("h3")
+
+        if (humanScore > computerScore) {
+            finishText.textContent = "You win!"
         }
+        else if (computerScore > humanScore) {
+            finishText.textContent = "Computer wins!"
+        }
+        else {
+            finishText.textContent = "Its a tie!"
+        }
+        
+        
+        
+        finishText.style.color = "green"
+        bottomText.appendChild(finishText)
+        options.removeEventListener("click", buttonClick)
+        return;
+    }
 
-    console.log("Game Done!")
 
-    console.log(`Human Wins: ${humanScore}`)
-    console.log(`Computer Wins: ${computerScore}`)
-    console.log(`Ties: ${tie}`)
-
-    
 }
-
-*/
-
-
-
